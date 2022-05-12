@@ -15,4 +15,6 @@ module com.example.optovisualtesting {
     opens com.example.optovisualtesting.Constraint to javafx.fxml;
     exports com.example.optovisualtesting.Geometry;
     opens com.example.optovisualtesting.Geometry to javafx.fxml;
+    exports com.example.optovisualtesting.Expression;
+    opens com.example.optovisualtesting.Expression to javafx.fxml;
 }

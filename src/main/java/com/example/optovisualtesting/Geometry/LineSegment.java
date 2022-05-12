@@ -26,4 +26,12 @@ public class LineSegment implements Curve {
         }
         return 0;
     }
+
+    @Override
+    public int distanceToPoint(Point point) {
+        pointOnLineAtTime = lerp(start, end);
+        Variable t;
+        Expression toMinimize = distanceBetweenPoints(point, pointOnLineAtTime(t));
+        return minimum(toMinimize, set(t));
+    }
 }

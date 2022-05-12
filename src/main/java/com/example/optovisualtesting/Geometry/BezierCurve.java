@@ -26,6 +26,11 @@ public class BezierCurve implements Curve {
         return rayIntersectionCount(point);
     }
 
+    @Override
+    public int distanceToPoint(Point point) {
+        return 0;
+    }
+
     public int rayIntersectionCount(Point point) {
         int sum = 0;
         for(double time : findTimesYieldingY(point.y)) {

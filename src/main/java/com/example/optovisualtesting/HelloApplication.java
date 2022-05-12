@@ -54,29 +54,29 @@ public class HelloApplication extends Application {
 
         scene.setOnMouseMoved((e) -> {
             mouse = new Point((int) e.getX(), (int) e.getY());
-            updateView();
+//            updateView();
         });
 
         initView();
-        updateView();
+//        updateView();
 
         stage.show();
     }
 
     private void initView() {
-        testPolygon = new Polygon(new LineSegment[]{});
+//        testPolygon = new Polygon(new LineSegment[]{});
 //        visuals.add(new PolygonVisual(testPolygon, Color.RED));
-
-        visuals.add(new GlyphigonVisual(new Glyphigon(new Curve[] {
-                new BezierCurve(
-                        new Point(50, 50),
-                        new Point(100, 250),
-                        new Point(550, -150),
-                        new Point(600, 50)
-                ),
-                new LineSegment(new Point(600, 50), new Point(600, 600)),
-                new LineSegment(new Point(600, 600), new Point(50, 50))
-        }), Color.rgb(0, 0, 255)));
+//
+//        visuals.add(new GlyphigonVisual(new Glyphigon(new Curve[] {
+//                new BezierCurve(
+//                        new Point(50, 50),
+//                        new Point(100, 250),
+//                        new Point(550, -150),
+//                        new Point(600, 50)
+//                ),
+//                new LineSegment(new Point(600, 50), new Point(600, 600)),
+//                new LineSegment(new Point(600, 600), new Point(50, 50))
+//        }), Color.rgb(0, 0, 255)));
 
 //        Curve[] gCurves = new Curve[]{
 //                new LineSegment(new Point(50, 0), new Point(100, 100)),
@@ -137,7 +137,6 @@ public class HelloApplication extends Application {
             writer.setColor(x, HEIGHT - y - 1, color);
         }
     }
-
     public static void main(String[] args) {
         launch();
     }
