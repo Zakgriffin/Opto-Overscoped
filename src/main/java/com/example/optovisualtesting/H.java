@@ -1,7 +1,7 @@
 package com.example.optovisualtesting;
 
 import com.example.optovisualtesting.Expression.Difference;
-import com.example.optovisualtesting.Expression.Expression;
+import com.example.optovisualtesting.Expression.NumberExpression;
 import com.example.optovisualtesting.Expression.Product;
 import com.example.optovisualtesting.Expression.Sum;
 
@@ -23,19 +23,29 @@ public class H {
         return (Number t) -> sum(a, product(difference(b, a), t));
     }
 
-    public static Expression sum(Expression... terms) {
+    public static NumberExpression sum(NumberExpression... terms) {
         return new Sum(collection(terms));
     }
 
-    public static Expression product(Expression... factors) {
+    public static NumberExpression product(NumberExpression... factors) {
         return new Product(new ArrayCollection<>(factors));
     }
 
-    public static Expression difference(Expression minuend, Expression subtrahend) {
+    public static NumberExpression difference(NumberExpression minuend, NumberExpression subtrahend) {
         return new Difference(minuend, subtrahend);
     }
 
     public static Collection collection() {
         return new Collection();
+    }
+
+    public void x() {
+        succesor(succesor(zero));
+    }
+
+    Zero zero = new Zero();
+
+    public static Successor succesor(Number number) {
+        return new Successor(Number number);
     }
 }

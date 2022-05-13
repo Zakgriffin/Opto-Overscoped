@@ -1,5 +1,5 @@
 package com.example.optovisualtesting.Expression;
 
-public interface Expression {
+public interface NumberExpression {
 
 }
