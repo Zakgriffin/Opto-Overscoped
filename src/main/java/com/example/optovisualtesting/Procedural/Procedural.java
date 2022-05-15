@@ -1,8 +1,8 @@
 package com.example.optovisualtesting.Procedural;
 
 public class Procedural {
-    public static DoThen doThen() {
-        return new DoThen();
+    public static DoThen doThen( Effect effect, ControlFlowAction next) {
+        return new DoThen(effect, next);
     }
 
     public static Add add(Mutable<Number> augend, Mutable<Number> addend) {

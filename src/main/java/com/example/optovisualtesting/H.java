@@ -19,24 +19,20 @@ public class H {
         return best;
     }
 
-    public static <T> Function<Number, T> lerp(T a, T b) {
-        return (Number t) -> sum(a, product(difference(b, a), t));
-    }
+//    public static <T> Function<Number, T> lerp(T a, T b) {
+//        return (Number t) -> sum(a, product(difference(b, a), t));
+//    }
 
     public static NumberExpression sum(NumberExpression... terms) {
-        return new Sum(collection(terms));
+        return new Sum(terms);
     }
 
     public static NumberExpression product(NumberExpression... factors) {
-        return new Product(new ArrayCollection<>(factors));
+        return new Product(factors);
     }
 
     public static NumberExpression difference(NumberExpression minuend, NumberExpression subtrahend) {
         return new Difference(minuend, subtrahend);
-    }
-
-    public static Collection collection() {
-        return new Collection();
     }
 
     public void x() {
@@ -46,6 +42,6 @@ public class H {
     Zero zero = new Zero();
 
     public static Successor succesor(Number number) {
-        return new Successor(Number number);
+        return new Successor(number);
     }
 }
