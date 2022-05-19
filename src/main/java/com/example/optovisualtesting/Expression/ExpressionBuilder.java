@@ -15,8 +15,8 @@ public class ExpressionBuilder {
     }
 
     public void updateChild(Expression expressionInGraph, Expression child) {
-        expressionInGraph.setChild(whichChild, child);
-
-        expressionInGraph.validateChildType();
+//        expressionInGraph.setChild(whichChild, child);
+//
+//        expressionInGraph.validateChildType();
     }
 }

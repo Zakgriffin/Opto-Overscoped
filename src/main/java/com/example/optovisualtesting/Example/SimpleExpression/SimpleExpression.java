@@ -20,14 +20,14 @@ public class SimpleExpression {
         NumberExpression simpleExpression = product(sum(number(20), x), number(4));
 
 
-        ExpressionBuilder builder = new ExpressionBuilder();
-        builder.setRoot(new Product());
-        builder.sethjygf(p, Product.FACTORS, product_X_20);
-        Product p = new Product();
-        p.
-
-
-        simpleExpression);
+//        ExpressionBuilder builder = new ExpressionBuilder();
+//        builder.setRoot(new Product());
+//        builder.sethjygf(p, Product.FACTORS, product_X_20);
+//        Product p = new Product();
+//        p.
+//
+//
+//        simpleExpression);
     }
 
 //    Procedure<SimpleExpressionMutables> simpleExpressionProcedure = expressionToProcedure(simpleExpression);

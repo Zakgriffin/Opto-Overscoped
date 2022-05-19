@@ -1,6 +1,10 @@
-//package com.example.optovisualtesting.Geometry;
-//
-//public class Geometry {
+package com.example.optovisualtesting.Geometry;
+
+public class Geometry {
+    public static Point pointDifference(Point minuend, Point subtrahend) {
+        return new Point(minuend.x - subtrahend.x, minuend.y - subtrahend.y);
+    }
+
 //    private static final double TWO_PI = Math.PI * 2;
 //    private static final double FOUR_PI = Math.PI * 4;
 //
@@ -98,4 +102,4 @@
 //                (-b - x) / (2 * a)
 //        };
 //    }
-//}
+}

@@ -3,7 +3,7 @@ package com.example.optovisualtesting.Expression;
 import java.util.Arrays;
 import java.util.List;
 
-public class Product implements Expression {
+public class Product implements NumberExpression {
     Expression[] factors;
 
     public Product(NumberExpression[] factors) {
@@ -25,8 +25,8 @@ public class Product implements Expression {
         return TypeStructure.PRODUCT;
     }
 
-    @Override
-    public void setChild(ProductChild whichChild, Expression[] factors) {
-
-    }
+//    @Override
+//    public void setChild(ProductChild whichChild, Expression[] factors) {
+//
+//    }
 }
