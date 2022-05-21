@@ -1,19 +1,18 @@
 package com.example.optovisualtesting.Geometry;
 
 import com.example.optovisualtesting.BoundingBox;
-import com.example.optovisualtesting.Shape;
+import com.example.optovisualtesting.ShapeInSpace;
 
 import static com.example.optovisualtesting.Geometry.Geometry.*;
 
-public class PositionedVisual implements Shape {
-    Shape visual;
-    Point position;
+public class Translated implements ShapeInSpace {
+    ShapeInSpace visual;
+    Point translation;
 
-    public PositionedVisual(Shape visual, Point position) {
+    public Translated(ShapeInSpace visual, Point position) {
         this.visual = visual;
-        this.position = position;
+        this.translation = position;
     }
-
 
     @Override
     public int distanceToPoint(Point point) {
@@ -35,6 +34,6 @@ public class PositionedVisual implements Shape {
     }
 
     Point translatedPoint(Point point) {
-        return pointDifference(point, position);
+        return pointDifference(point, translation);
     }
 }

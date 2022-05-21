@@ -19,4 +19,6 @@ module com.example.optovisualtesting {
     opens com.example.optovisualtesting.Expression to javafx.fxml;
     exports com.example.optovisualtesting.Emulator;
     opens com.example.optovisualtesting.Emulator to javafx.fxml;
+    exports com.example.optovisualtesting.Observe;
+    opens com.example.optovisualtesting.Observe to javafx.fxml;
 }

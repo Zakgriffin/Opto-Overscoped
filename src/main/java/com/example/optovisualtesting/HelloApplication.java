@@ -18,11 +18,13 @@ public class HelloApplication extends Application {
 
     Point mouse = new Point(0, 0);
 
-    ObservableSet<Visual> visuals = new ObservableSet<>(new HashSet<>());
+    SetO<Visual> visuals = new SetO<>(new HashSet<>());
     Map<Visual, BoundingBox> cachedBoundingBoxes = new HashMap<>();
     Map<Visual, ColorRGBMatrix> cachedShapePixelColors = new HashMap<>();
 
-    Set<Clickable> clickables = new HashSet<>();
+    java.util.Set mouseListeners = new HashSet<>();
+
+    java.util.Set clickables = new HashSet<>();
     Queue<Runnable> drawQueue = new LinkedList<>();
 
     int[] pixels = new int[WIDTH * HEIGHT];
@@ -53,9 +55,20 @@ public class HelloApplication extends Application {
 
         scene.setOnMouseClicked((e) -> clickables.forEach(clickable -> clickable.onClick(e)));
 
-        scene.setOnMouseMoved((e) -> {
-            mouse = new Point((int) e.getX(), (int) e.getY());
+        scene.setOnMouseMoved((e) -> mouseListeners.forEach((listener) -> listener.notify(e)));
+
+
+
+        Point mousePosition = a(new Point(0, 0));
+
+        PointObserve pointObserve = new PointObserve(mousePosition);
+
+        mouseListeners.add((e) -> {
+            mousePosition.x =
+            observables.update(mousePosition);
         });
+
+
 
 
         for (int i = 0; i < pixels.length; i++) {
@@ -71,10 +84,39 @@ public class HelloApplication extends Application {
     }
 
     void doStuff() {
-        visuals.add(new PositionedVisual(
-                new CircleShape(new Circle(40)),
-                new Point(40, 50)
-        ));
+        CircleShapeInSpace circleShapeInSpace = new CircleShapeInSpace(new Circle(40));
+        CircleShapeInSpace circleShapeInSpace2 = new CircleShapeInSpace(new Circle(50));
+
+        ShapeInSpace circle = new Translated(circleShapeInSpace, mousePosition);
+        Point pos2;
+
+        ShapeInSpace circle2 = new Translated(circleShapeInSpace, pos2);
+
+        SolidShapePainter solidPainter = new SolidShapePainter(new EnumMap<>(Map.of(
+                ShapePlacement.EDGE, new ColorRGB(255, 0, 0)
+        )));
+
+        PaintedVisualInSpace paintedCircleInSpace = new PaintedShapeInSpace(circle, solidPainter);
+
+        SetO<PaintedVisualInSpace> visualsInScene = new SetO<>();
+        shapesInScene.add(paintedCircleInSpace);
+
+        Painter groupBlending = new OrderedLayeringPriority();
+
+        ShapeInSpaceGroup group = new ShapeInSpaceGroup(shapesInScene, groupBlendPainter);
+
+        ColorRGBMatrix mat = new ColorRGBMatrix();
+        VisualContext v = new VisualProceduralNestedCached(paintedCircleInSpace, mat);
+
+        Visual circleVisual = new BufferedVisual(circlePainter);
+
+        screen.addPaintedShapeInSpace(paintedCircleInSpace);
+
+        Screen screen = new Screen(group);
+
+        if(circleVisual.hasWorkToPaint()) {
+            circleVisual.paint(matrix);
+        }
     }
 
     //    private void writePixel(int x, int y, Color color) {

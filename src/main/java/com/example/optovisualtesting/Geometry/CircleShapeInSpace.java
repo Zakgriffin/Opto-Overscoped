@@ -1,14 +1,14 @@
 package com.example.optovisualtesting.Geometry;
 
 import com.example.optovisualtesting.BoundingBox;
-import com.example.optovisualtesting.Shape;
+import com.example.optovisualtesting.ShapeInSpace;
 
 import static com.example.optovisualtesting.Geometry.ShapePlacement.*;
 
-public class CircleShape implements Shape {
+public class CircleShapeInSpace implements ShapeInSpace {
     Circle circle;
 
-    public CircleShape(Circle circle) {
+    public CircleShapeInSpace(Circle circle) {
         this.circle = circle;
     }
 

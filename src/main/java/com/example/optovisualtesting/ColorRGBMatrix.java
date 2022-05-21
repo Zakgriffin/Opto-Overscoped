@@ -11,12 +11,12 @@ public class ColorRGBMatrix {
         this.size = size;
     }
 
-    public void setAtPointIndex(Point pointIndex, Color colorRGB) {
+    public void setAtPointIndex(Point pointIndex, ColorRGB colorRGB) {
         compactColorRGBs[pointToIndex(pointIndex)] = colorRGBToCompact(colorRGB);
     }
 
-    public Color atPointIndex(Point pointIndex) {
-        return compactToColorRGB(compactColorRGBs[pointToIndex(pointIndex)]);
+    public ColorRGB atPointIndex(Point pointIndex) {
+        return ColorRGB.compactToColorRGB(compactColorRGBs[pointToIndex(pointIndex)]);
     }
 
     public int pointToIndex(Point point) {
@@ -24,15 +24,7 @@ public class ColorRGBMatrix {
     }
 
     // precondition - all range 0 - 255
-    public int colorRGBToCompact(Color colorRGB) {
+    public int colorRGBToCompact(ColorRGB colorRGB) {
         return 0xFF000000 | (colorRGB.red << 16) | (colorRGB.green << 8) | colorRGB.blue;
-    }
-
-    public Color compactToColorRGB(int compactColorRGB) {
-        return new Color(
-                (compactColorRGB >> 16) & 0x000000FF,
-                (compactColorRGB >> 8) & 0x000000FF,
-                compactColorRGB & 0x000000FF
-        );
     }
 }
