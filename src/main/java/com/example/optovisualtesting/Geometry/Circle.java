@@ -1,9 +1,17 @@
 package com.example.optovisualtesting.Geometry;
 
-public class Circle {
-    int radius;
+import com.example.optovisualtesting.Int;
+import com.example.optovisualtesting.ProcedurePaths;
 
-    public Circle(int radius) {
+public class Circle {
+    Int radius;
+
+    public Circle(Int radius) {
         this.radius = radius;
+    }
+
+    ProcedurePaths<Int> setRadiusPaths = new ProcedurePaths<>();
+    public void setRadius() {
+
     }
 }
