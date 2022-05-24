@@ -4,13 +4,14 @@ import com.example.optovisualtesting.Geometry.*;
 import com.example.optovisualtesting.Math.IntegerO;
 import com.example.optovisualtesting.Visuals.*;
 import com.example.optovisualtesting.Visuals.Screen;
+import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.image.*;
 import javafx.stage.*;
 
 import java.util.*;
 
-public class Application extends javafx.application.Application {
+public class OptoApplication extends Application {
     final int WIDTH = 1400;
     final int HEIGHT = 800;
 
@@ -84,7 +85,7 @@ public class Application extends javafx.application.Application {
         group_visual.set_visual(ordered_group_visual);
 
         Screen screen = new Screen();
-        screen.assign_visual();
+        screen.assign_visual(ordered_group_visual);
     }
 
     public static void main(String[] args) {

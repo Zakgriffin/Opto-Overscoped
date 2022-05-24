@@ -15,8 +15,10 @@ public class Circle implements ShapeInSpace {
     Listeners<IntegerO> assign_radius_listeners = new Listeners<>();
     public void assign_radius(IntegerO radius) {
         this.radius = radius;
+        radius.references_this.add(this);
 
         assign_radius_listeners.runAll(radius);
+        radius.
     }
 
     public int squared_distance_to_point(Point point) {

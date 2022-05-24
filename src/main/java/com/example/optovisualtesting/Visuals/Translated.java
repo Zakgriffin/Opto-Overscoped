@@ -8,6 +8,8 @@ public class Translated implements ShapeInSpace {
     ShapeInSpace visual;
     Point translation;
 
+
+
     public Translated(ShapeInSpace visual, Point position) {
         this.visual = visual;
         this.translation = position;
