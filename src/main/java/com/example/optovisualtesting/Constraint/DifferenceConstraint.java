@@ -1,14 +1,14 @@
 package com.example.optovisualtesting.Constraint;
 
-import com.example.optovisualtesting.Expression.Verification;
-import com.example.optovisualtesting.Int;
+import com.example.optovisualtesting.Math.Verification;
+import com.example.optovisualtesting.Math.IntegerO;
 
-import static com.example.optovisualtesting.Expression.Verification.toVerification;
+import static com.example.optovisualtesting.Math.Verification.toVerification;
 
 public class DifferenceConstraint {
-    public Int minuend;
-    public Int subtrahend;
-    public Int difference;
+    public IntegerO minuend;
+    public IntegerO subtrahend;
+    public IntegerO difference;
 
     Verification proposition() {
         return toVerification(minuend.i - subtrahend.i == difference.i);
@@ -18,7 +18,7 @@ public class DifferenceConstraint {
         int minuend;
     }
 
-    ProcedurePaths<Integer> setMinuendProcedures;
+    ProcedurePaths<java.lang.Integer> setMinuendProcedures;
 
     public void setMinuend(int minuend) {
         differenceConstraint.minuend = minuend;

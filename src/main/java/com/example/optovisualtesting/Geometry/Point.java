@@ -1,42 +1,22 @@
 package com.example.optovisualtesting.Geometry;
 
-import com.example.optovisualtesting.Listener;
-import com.example.optovisualtesting.ProcedurePaths;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
+import com.example.optovisualtesting.Procedural.Listeners;
 
 public class Point {
-    public int x;
-    public int y;
+    public Integer x;
+    public Integer y;
 
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + ", " + y + " )";
-    }
-
-    public static Point forBothComponents(Point p1, Point p2, BiFunction<Integer, Integer, Integer> f) {
-        return new Point(f.apply(p1.x, p2.x), f.apply(p1.y, p2.y));
-    }
-
-    ProcedurePaths<Integer> setX = new ProcedurePaths<>();
-    public void setX(int x) {
+    Listeners<Integer> assign_x_listeners = new Listeners<>();
+    public void assign_x(int x) {
         this.x = x;
 
-        setX.runAll(x);
+        assign_x_listeners.runAll(x);
     }
 
-    ProcedurePaths<Integer> setY = new ProcedurePaths<>();
-    public void setY(int y) {
+    Listeners<Integer> assign_y_listeners = new Listeners<>();
+    public void assign_y(int y) {
         this.y = y;
 
-        setY.runAll(y);
+        assign_y_listeners.runAll(y);
     }
 }

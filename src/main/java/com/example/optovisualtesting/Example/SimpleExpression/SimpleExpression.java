@@ -1,15 +1,9 @@
 package com.example.optovisualtesting.Example.SimpleExpression;
 
-import com.example.optovisualtesting.Expression.Expression;
-import com.example.optovisualtesting.Expression.NumberExpression;
-import com.example.optovisualtesting.Number;
-import com.example.optovisualtesting.NumberVariable;
-import com.example.optovisualtesting.Procedural.ControlFlow;
-import com.example.optovisualtesting.Procedural.Mutable;
+import com.example.optovisualtesting.Math.NumberExpression;
 
 import static com.example.optovisualtesting.H.*;
 import static com.example.optovisualtesting.JavaToHighLevel.P.*;
-import static com.example.optovisualtesting.Procedural.Procedural.*;
 
 public class SimpleExpression {
     // (20 + x) * 4

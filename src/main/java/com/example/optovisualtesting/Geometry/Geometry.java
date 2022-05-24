@@ -1,9 +1,18 @@
 package com.example.optovisualtesting.Geometry;
 
 public class Geometry {
-    public static Point pointDifference(Point minuend, Point subtrahend) {
-        return new Point(minuend.x - subtrahend.x, minuend.y - subtrahend.y);
+    public static Point point(Integer x, Integer y) {
+        Point point = new Point();
+        point.assign_x(x);
+        point.assign_y(y);
+        return point;
     }
+
+//    public static Point pointDifference(Point minuend, Point subtrahend) {
+//        return new Point(minuend.x - subtrahend.x, minuend.y - subtrahend.y);
+//    }
+//
+//
 
 //    private static final double TWO_PI = Math.PI * 2;
 //    private static final double FOUR_PI = Math.PI * 4;
