@@ -1,13 +1,6 @@
 package com.example.optovisualtesting.Geometry;
 
 public class Geometry {
-    public static Point point(Integer x, Integer y) {
-        Point point = new Point();
-        point.assign_x(x);
-        point.assign_y(y);
-        return point;
-    }
-
 //    public static Point pointDifference(Point minuend, Point subtrahend) {
 //        return new Point(minuend.x - subtrahend.x, minuend.y - subtrahend.y);
 //    }

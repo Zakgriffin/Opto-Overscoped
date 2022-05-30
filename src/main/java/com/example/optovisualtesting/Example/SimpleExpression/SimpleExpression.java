@@ -2,16 +2,13 @@ package com.example.optovisualtesting.Example.SimpleExpression;
 
 import com.example.optovisualtesting.Math.NumberExpression;
 
-import static com.example.optovisualtesting.H.*;
-import static com.example.optovisualtesting.JavaToHighLevel.P.*;
-
 public class SimpleExpression {
     // (20 + x) * 4
     // *(+(20, x), 4)
 
     public static void doStuff() {
-        NumberVariable x = new NumberVariable();
-        NumberExpression simpleExpression = product(sum(number(20), x), number(4));
+//        NumberVariable x = new NumberVariable();
+//        NumberExpression simpleExpression = product(sum(number(20), x), number(4));
 
 
 //        ExpressionBuilder builder = new ExpressionBuilder();

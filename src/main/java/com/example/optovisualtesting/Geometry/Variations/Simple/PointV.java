@@ -1,4 +1,4 @@
-package com.example.optovisualtesting.Geometry.Variations;
+package com.example.optovisualtesting.Geometry.Variations.Simple;
 
 public class PointV {
     public int x;

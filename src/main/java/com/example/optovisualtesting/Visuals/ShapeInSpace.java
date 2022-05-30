@@ -1,7 +1,7 @@
 package com.example.optovisualtesting.Visuals;
 
 import com.example.optovisualtesting.Geometry.*;
-import com.example.optovisualtesting.Geometry.Variations.RectangleV;
+import com.example.optovisualtesting.Geometry.Variations.Simple.RectangleV;
 
 public interface ShapeInSpace {
     int distance_to_point(Point point);

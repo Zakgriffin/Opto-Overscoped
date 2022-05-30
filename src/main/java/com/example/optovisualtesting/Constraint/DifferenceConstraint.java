@@ -14,22 +14,22 @@ public class DifferenceConstraint {
         return toVerification(minuend.i - subtrahend.i == difference.i);
     }
 
-    class SetMinuendPotentialAction implements PotentialAction {
-        int minuend;
-    }
+//    class SetMinuendPotentialAction implements PotentialAction {
+//        int minuend;
+//    }
 
-    ProcedurePaths<java.lang.Integer> setMinuendProcedures;
+//    ProcedurePaths<java.lang.Integer> setMinuendProcedures;
 
-    public void setMinuend(int minuend) {
-        differenceConstraint.minuend = minuend;
-        solveConstraints();
-
-        setMinuendProcedures.run(minuend);
-    }
-
-    public PotentialAction constraintSolveActionOptions() {
-
-    }
+//    public void setMinuend(int minuend) {
+//        differenceConstraint.minuend = minuend;
+//        solveConstraints();
+//
+//        setMinuendProcedures.run(minuend);
+//    }
+//
+//    public PotentialAction constraintSolveActionOptions() {
+//
+//    }
 
     public void setSubtrahend() {
 
