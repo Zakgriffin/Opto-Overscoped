@@ -4,19 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DeclareMutMap {
-    Map<Object, Object> declare_to_mut = new HashMap<>();
-    Map<Object, Object> mut_to_declare = new HashMap<>();
+    public Map<DeclareNode, MutNode> declare_to_mut = new HashMap<>();
+    public Map<MutNode, DeclareNode> mut_to_declare = new HashMap<>();
 
-    public void link(Object declare, Object mut) {
+    public void link(DeclareNode declare, MutNode mut) {
         declare_to_mut.put(declare, mut);
         mut_to_declare.put(mut, declare);
     }
 
-    public Object to_mut(Object declare) {
+    public MutNode to_mut(DeclareNode declare) {
         return declare_to_mut.get(declare);
     }
 
-    public Object to_declare(Object mut) {
+    public DeclareNode to_declare(MutNode mut) {
         return mut_to_declare.get(mut);
     }
 }
